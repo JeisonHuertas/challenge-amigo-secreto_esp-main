@@ -16,9 +16,28 @@ function agregarAmigo () {
     } else {
         //Agregar nombre a la lista
         amigos.push(nombreAmigo);
+        actualizarListaAmigos();
     }
 
-    //Limpiar Campo
+    //Limpiar Campo Nombre Amigo
     campoNombreAmigo.value = "";
+}
+
+//Funcion para actualizar la lista de amigos en pantalla
+function actualizarListaAmigos() {
+    let listaAmigos = document.querySelector('#listaAmigos');
+    //Limpiar lista existente, evita duplicidad en los datos
+    listaAmigos.innerHTML = '';
+
+    //Recorrer la lista de nombre de amigos almacenada por el usuario
+    for (let i = 0; i < amigos.length; i++) {
+        //Crear el elemento li para añadirlo en la lista ul
+        let nuevoLi = document.createElement("li");
+        //asignarle el nombre según la iteración
+        nuevoLi.textContent = amigos[i];
+        //Añadir a la lista el elemento
+        listaAmigos.appendChild(nuevoLi); 
+    }
+
 }
 
