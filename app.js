@@ -41,3 +41,18 @@ function actualizarListaAmigos() {
 
 }
 
+//Función para sortear el amigo secreto
+function sortearAmigo() {
+
+    //Validación lista de amigos vacía
+    if (amigos.length == 0) {
+        alert("Añade nombres a tu lista de amigos");
+    } else {
+        //Definición de indice para asignar posición en la lista
+        let indice = Math.floor(Math.random()*amigos.length)+1;
+        //Mostrar el amigo sorteado en pantalla
+        document.getElementById("resultado").innerHTML = `El amigo secreto sorteado es: ${amigos[indice-1]}`;
+
+    }
+}
+
