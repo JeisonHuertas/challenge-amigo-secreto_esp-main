@@ -30,11 +30,11 @@ function actualizarListaAmigos() {
     listaAmigos.innerHTML = '';
 
     //Recorrer la lista de nombre de amigos almacenada por el usuario
-    for (let i = 0; i < amigos.length; i++) {
+    for (let amigo = 0; amigo < amigos.length; amigo++) {
         //Crear el elemento li para añadirlo en la lista ul
         let nuevoLi = document.createElement("li");
         //asignarle el nombre según la iteración
-        nuevoLi.textContent = amigos[i];
+        nuevoLi.textContent = amigos[amigo];
         //Añadir a la lista el elemento
         listaAmigos.appendChild(nuevoLi); 
     }
